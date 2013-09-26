@@ -131,6 +131,14 @@ config CPU_FREQ_DEFAULT_GOV_LIONHEART
 	bool "lionheart"
 	select CPU_FREQ_GOV_LIONHEART
 
+config CPU_FREQ_DEFAULT_GOV_LULZACTIVEQ
+	bool "lulzactiveq"
+	select CPU_FREQ_GOV_LULZACTIVEQ
+
+config CPU_FREQ_DEFAULT_GOV_YANKASUSQ
+	bool "yankasusq"
+	select CPU_FREQ_GOV_YANKASUSQ
+
 endchoice
 
 config CPU_FREQ_GOV_PERFORMANCE
@@ -298,6 +306,14 @@ config CPU_FREQ_GOV_INTELLIDEMAND
 
 config CPU_FREQ_GOV_LIONHEART
 	tristate "'lionheart' cpufreq governor"
+	depends on CPU_FREQ
+
+config CPU_FREQ_GOV_LULZACTIVEQ
+	tristate "'lulzactiveq' cpufreq governor"
+	depends on CPU_FREQ
+
+config CPU_FREQ_GOV_YANKASUSQ
+	tristate "'yankasusq' cpufreq governor"
 	depends on CPU_FREQ
 
 
