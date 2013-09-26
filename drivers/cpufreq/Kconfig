@@ -127,6 +127,10 @@ config CPU_FREQ_DEFAULT_GOV_INTELLIDEMAND
 	bool "intellidemand"
 	select CPU_FREQ_GOV_INTELLIDEMAND
 
+config CPU_FREQ_DEFAULT_GOV_LIONHEART
+	bool "lionheart"
+	select CPU_FREQ_GOV_LIONHEART
+
 endchoice
 
 config CPU_FREQ_GOV_PERFORMANCE
@@ -289,8 +293,12 @@ config CPU_FREQ_DVFS_MONITOR
 	  /proc/dvfs_mon
 
 config CPU_FREQ_GOV_INTELLIDEMAND
-tristate "'intellidemand' cpufreq governor"
-depends on CPU_FREQ
+	tristate "'intellidemand' cpufreq governor"
+	depends on CPU_FREQ
+
+config CPU_FREQ_GOV_LIONHEART
+	tristate "'lionheart' cpufreq governor"
+	depends on CPU_FREQ
 
 
 menu "x86 CPU frequency scaling drivers"
